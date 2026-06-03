@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Criteria: only the owner can read, create, update, or delete
+    match /criteria/{docId} {
+      allow read, update, delete: if request.auth != null
+                                  && request.auth.uid == resource.data.uid;
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid;
+    }
+
+    // Alternatives: only the owner can read, create, update, or delete
+    match /alternatives/{docId} {
+      allow read, update, delete: if request.auth != null
+                                  && request.auth.uid == resource.data.uid;
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid;
+    }
+
+  }
+}

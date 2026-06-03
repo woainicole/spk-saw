@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evaluasi Karyawan - Kenangan Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#FDF8F2",
+                        "on-background": "#2C2C2C",
+                        "surface": "#FDF8F2",
+                        "on-surface": "#2C2C2C",
+                        "on-surface-variant": "#4a4a4a",
+                        "surface-container-lowest": "#F0F0F0",
+                        "surface-container": "#E5E5E5",
+                        "surface-container-high": "#D4D4D4",
+                        "primary": "#E89CA2",
+                        "on-primary": "#0B2240",
+                        "primary-container": "#0B2240",
+                        "on-primary-container": "#E89CA2",
+                        "secondary": "#4a4a4a",
+                        "secondary-container": "#D4D4D4",
+                        "on-secondary-container": "#2C2C2C",
+                        "outline-variant": "#C4C4C4",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#0B2240",
+                        "surface-variant": "#D4D4D4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "gutter-mobile": "12px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "touch-target": "48px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "30px", "fontWeight": "700" }],
+                        "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-[80px] font-body-md antialiased md:hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-40 bg-[#0B2240] flex justify-between items-center px-margin-mobile py-sm h-[64px]">
+<div class="flex items-center gap-sm">
+<div class="w-[32px] h-[32px] rounded-full bg-[#E89CA2] text-[#0B2240] flex items-center justify-center font-label-md text-label-md font-bold">
+                EP
+            </div>
+<h1 class="text-headline-md-mobile font-headline-md-mobile font-bold text-[#E89CA2]">Evaluasi Karyawan</h1>
+</div>
+<button class="text-[#E89CA2] hover:bg-white/10 transition-colors p-sm rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-[64px] px-margin-mobile flex flex-col gap-md">
+<!-- Summary Bobot Scroll -->
+<section class="mt-md -mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar flex gap-sm pb-xs">
+<div class="flex-shrink-0 bg-surface-container rounded-full px-4 py-2 border border-outline-variant text-label-sm font-label-sm text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                Kehadiran W=20
+            </div>
+<div class="flex-shrink-0 bg-surface-container rounded-full px-4 py-2 border border-outline-variant text-label-sm font-label-sm text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+                Kecepatan W=25
+            </div>
+<div class="flex-shrink-0 bg-surface-container rounded-full px-4 py-2 border border-outline-variant text-label-sm font-label-sm text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">mood</span>
+                Sikap W=30
+            </div>
+<div class="flex-shrink-0 bg-surface-container rounded-full px-4 py-2 border border-outline-variant text-label-sm font-label-sm text-secondary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Akurasi W=25
+            </div>
+</section>
+<!-- Form Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex flex-col gap-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-[4px] bg-primary"></div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Tambah Evaluasi</h2>
+<div class="flex flex-col gap-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Nama Lengkap Karyawan</label>
+<input class="h-touch-target rounded-lg border border-outline-variant px-sm text-body-md font-body-md bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors w-full" placeholder="Masukkan nama..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Score Input 1 -->
+<div class="flex flex-col gap-xs bg-surface-container p-sm rounded-lg border border-outline-variant">
+<label class="text-label-md font-label-md text-on-surface flex justify-between items-center">
+                        Kehadiran
+                        <span class="text-primary font-bold">/100</span>
+</label>
+<p class="text-label-sm font-label-sm text-secondary leading-tight">Ketepatan waktu dan absensi</p>
+<input class="h-[40px] rounded border border-outline-variant px-sm text-body-md font-body-md bg-surface-container-lowest mt-xs text-center font-bold" max="100" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Score Input 2 -->
+<div class="flex flex-col gap-xs bg-surface-container p-sm rounded-lg border border-outline-variant">
+<label class="text-label-md font-label-md text-on-surface flex justify-between items-center">
+                        Kecepatan
+                        <span class="text-primary font-bold">/100</span>
+</label>
+<p class="text-label-sm font-label-sm text-secondary leading-tight">Semakin cepat pelayanan, semakin bagus</p>
+<input class="h-[40px] rounded border border-outline-variant px-sm text-body-md font-body-md bg-surface-container-lowest mt-xs text-center font-bold" max="100" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Score Input 3 -->
+<div class="flex flex-col gap-xs bg-surface-container p-sm rounded-lg border border-outline-variant">
+<label class="text-label-md font-label-md text-on-surface flex justify-between items-center">
+                        Sikap
+                        <span class="text-primary font-bold">/100</span>
+</label>
+<p class="text-label-sm font-label-sm text-secondary leading-tight">Keramahan melayani pelanggan</p>
+<input class="h-[40px] rounded border border-outline-variant px-sm text-body-md font-body-md bg-surface-container-lowest mt-xs text-center font-bold" max="100" min="0" placeholder="0" type="number"/>
+</div>
+<!-- Score Input 4 -->
+<div class="flex flex-col gap-xs bg-surface-container p-sm rounded-lg border border-outline-variant">
+<label class="text-label-md font-label-md text-on-surface flex justify-between items-center">
+                        Akurasi
+                        <span class="text-primary font-bold">/100</span>
+</label>
+<p class="text-label-sm font-label-sm text-secondary leading-tight">Kesesuaian pesanan disajikan</p>
+<input class="h-[40px] rounded border border-outline-variant px-sm text-body-md font-body-md bg-surface-container-lowest mt-xs text-center font-bold" max="100" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<button class="h-touch-target bg-[#0B2240] text-[#E89CA2] rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-xs mt-sm shadow-sm active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                Simpan Evaluasi
+            </button>
+</section>
+<!-- List Karyawan -->
+<h2 class="text-headline-md font-headline-md text-on-surface mt-sm">Daftar Evaluasi</h2>
+<div class="flex flex-col gap-md pb-xl">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative">
+<div class="absolute left-0 top-0 bottom-0 w-[4px] bg-tertiary-fixed-dim rounded-l-xl"></div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-[40px] h-[40px] rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-label-md font-bold">
+                            AB
+                        </div>
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Ahmad Budi</h3>
+<p class="text-label-sm font-label-sm text-secondary">Barista - Outlet Thamrin</p>
+</div>
+</div>
+<div class="flex gap-xs">
+<button class="w-[32px] h-[32px] flex items-center justify-center text-secondary hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-[32px] h-[32px] flex items-center justify-center text-error hover:bg-error-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-xs bg-surface-container rounded-lg p-xs border border-outline-variant">
+<div class="flex flex-col items-center p-xs">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Kehadiran</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">85</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Kecepatan</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">90</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Sikap</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">95</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Akurasi</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">88</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-[0_2px_8px_rgba(0,0,0,0.04)] relative">
+<div class="absolute left-0 top-0 bottom-0 w-[4px] bg-tertiary-fixed-dim rounded-l-xl"></div>
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-[40px] h-[40px] rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-label-md font-bold">
+                            CD
+                        </div>
+<div>
+<h3 class="text-body-lg font-body-lg font-semibold text-on-surface">Citra Dewi</h3>
+<p class="text-label-sm font-label-sm text-secondary">Kasir - Outlet Sudirman</p>
+</div>
+</div>
+<div class="flex gap-xs">
+<button class="w-[32px] h-[32px] flex items-center justify-center text-secondary hover:bg-surface-variant rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-[32px] h-[32px] flex items-center justify-center text-error hover:bg-error-container rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-xs bg-surface-container rounded-lg p-xs border border-outline-variant">
+<div class="flex flex-col items-center p-xs">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Kehadiran</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">92</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Kecepatan</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">80</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Sikap</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">85</span>
+</div>
+<div class="flex flex-col items-center p-xs border-l border-outline-variant">
+<span class="text-label-sm font-label-sm text-secondary mb-1">Akurasi</span>
+<span class="text-body-md font-body-md font-bold text-[#0B2240]">90</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] bg-surface-container-lowest md:hidden">
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="text-label-sm font-label-sm">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined mb-1">rule</span>
+<span class="text-label-sm font-label-sm">Criteria</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">assessment</span>
+<span class="text-label-sm font-label-sm font-bold">Evaluate</span>
+</button>
+</nav>
+</body></html>

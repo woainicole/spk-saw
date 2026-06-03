@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Kenangan Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb4ac",
+                        "surface-tint": "#b91d20",
+                        "surface": "#FDF8F2",
+                        "outline-variant": "#d9d9d9",
+                        "on-tertiary-container": "#e1ebfc",
+                        "tertiary-fixed": "#d9e3f4",
+                        "tertiary": "#485260",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-primary-container": "#0B2240",
+                        "on-primary-fixed-variant": "#93000f",
+                        "outline": "#8f706c",
+                        "tertiary-fixed-dim": "#bdc7d8",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d9dadc",
+                        "secondary": "#0B2240",
+                        "error-container": "#ffdad6",
+                        "on-background": "#2C2C2C",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#2C2C2C",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#F0F0F0",
+                        "on-surface": "#2C2C2C",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#606a79",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-fixed-variant": "#3e4755",
+                        "primary-container": "#E89CA2",
+                        "on-primary": "#0B2240",
+                        "on-primary-fixed": "#410003",
+                        "primary": "#E89CA2",
+                        "on-tertiary-fixed": "#121c28",
+                        "on-secondary-container": "#ffffff",
+                        "inverse-primary": "#ffb4ac",
+                        "surface-container-low": "#e8e8e8",
+                        "surface-container-high": "#e7e8ea",
+                        "on-tertiary": "#ffffff",
+                        "background": "#FDF8F2",
+                        "surface-variant": "#e6e6e6",
+                        "surface-container": "#edeef0",
+                        "secondary-container": "#e2dfde",
+                        "inverse-surface": "#2e3132",
+                        "surface-bright": "#f8f9fb",
+                        "inverse-on-surface": "#f0f1f3",
+                        "primary-fixed": "#ffdad6",
+                        "secondary-fixed-dim": "#c8c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "gutter-mobile": "12px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "touch-target": "48px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "display": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                        "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24">
+<!-- TopAppBar (Hidden on Mobile, flex on md up based on platform layout logic, but requirement asked for TopAppBar. Let's render as standard nav header) -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-on-surface-variant flex justify-between items-center w-full px-margin-mobile py-sm sticky top-0 z-40 hidden md:flex">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Employee Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEmi5aeYZseuhDKPht_HufqIwhZJzLjGPrSBqKG_HioU6dcQU6nlCZBN8ZuYJZOygrvIZU7wmN1uEfs4ZeNKgi6e8-tGmRFclTvu6uzrWU-bR_s_AuoYj5xAb3biet3kBxNFot69Ay_yBO_D1yM5JukrLoEMZ0J-U1vY259wf2xtGl0sTah0UmIuBvbek_CZBYXw2bcGGMBDbSrxJU7-3SoYOK_JYhC3H9kBsNpEC8_-nfgpYZTLdfwQMTKONCd17PfbKVhIPu1qng"/>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-secondary dark:text-primary-fixed-dim">Kenangan Performance</h1>
+</div>
+<div>
+<button aria-label="notifications" class="w-touch-target h-touch-target flex items-center justify-center rounded-full hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-colors text-secondary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Mobile Header Replacement for Content (Halo Manager) -->
+<div class="px-margin-mobile pt-lg pb-md flex justify-between items-start md:hidden">
+<div>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-secondary mb-xs">Halo, Manager!</h1>
+<p class="text-body-sm font-body-sm text-on-surface opacity-80">Penilaian Kinerja Periode Mei 2026</p>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden shadow-sm border border-outline-variant">
+<img alt="Manager Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA24IEcKoA2swLi1z_ig-n5n1Do1J5d4cosY9tZMJxlW1PNxK7FfXqlGICdXRzbU-9x5QR1ObcK1yZo4BMJ2Cd1GyOTmHUHiL3xSH1QdLd5BAKRmL8fN0gHDNSLIU2CpuH3na8XGX1DSriBuhD8wELeXhF4Vwho1QwnrZA1zn9k-PUQr007KRAmOS2AktGm_r7DNse2JjhNvlbwv8UujCmF-MAROskkR0a2QedHakBHpKhg8sZ4nKtMUG-DpBAeLJZyuCEdbYaAtv3y"/>
+</div>
+</div>
+<main class="max-w-3xl mx-auto md:mt-lg px-margin-mobile">
+<!-- Summary Cards Bento Layout -->
+<section class="grid grid-cols-2 gap-gutter-mobile mb-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-[4px] border-l-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary opacity-20 rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col h-full justify-between gap-md">
+<div class="flex items-center justify-between">
+<span class="text-secondary">
+<span class="material-symbols-outlined icon-fill">rule</span>
+</span>
+</div>
+<div>
+<p class="text-display font-display text-secondary">5</p>
+<h2 class="text-label-md font-label-md text-secondary uppercase tracking-wider">Total Kriteria</h2>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-[4px] border-l-secondary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-secondary opacity-10 rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col h-full justify-between gap-md">
+<div class="flex items-center justify-between">
+<span class="text-secondary">
+<span class="material-symbols-outlined icon-fill">group</span>
+</span>
+</div>
+<div>
+<p class="text-display font-display text-secondary">12</p>
+<h2 class="text-label-md font-label-md text-secondary uppercase tracking-wider">Total Karyawan</h2>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Barista Section -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h2 class="text-headline-md font-headline-md text-secondary">Top Barista</h2>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-surface-variant text-on-surface-variant rounded-md">SAW Results</span>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Rank 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm pr-md flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-tertiary-fixed">
+<img alt="Avatar Budi" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-7o0lA9gKqenaX_yqCrIwKY8JfkQmbYqI0fraTpkS4RLJtysQb522fLFAEczBQLqRXuWfFmeYKrIyQaB0XLNCCyhVsoHV0gWhpapZszhDwc9puDH7WJa5bE-M2fIxBEndaER4Q6P6zHjaPuMMGt8HLobvfZBBZzy8rE3VGUBXdTRxC_cZ5T_cFf2me1a1qu6R8FFvgKTw4sEdniKamwZLhXVenGNGTalKTXlpEFwanBBzWBQ1V_srcwPTgS1i18ea4Ji7wlLEVxg1"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-[#F59E0B] text-[16px] icon-fill">emoji_events</span>
+</div>
+</div>
+<div>
+<p class="text-body-md font-body-md font-semibold text-on-surface">Budi Santoso</p>
+<p class="text-label-md font-label-md text-on-surface opacity-80">Barista</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-headline-md font-headline-md text-secondary">0.89</p>
+<p class="text-label-sm font-label-sm text-on-surface opacity-80">Score</p>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm pr-md flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-tertiary-fixed">
+<img alt="Avatar Siti" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKA6HXffwtbGeNJGgXmmkr45GdQfb_kdOf0zxTsByTi7g2MY1snPBk22s07BqA52Gv8ATk3YsT4_l1oBkSMAtYrGeDE4HfVgHkOwABfdFadqXaSZYiHVlh2kK0_-31GwK6pgvuVR6rAJ0fjnzZgR_w9GYjAnWJHm-GRa1NtlesdeMqqYNCM0BmTo8kCLusXXxo1m_6DvF0wbrI7KY-baGgDamfbthtWVk35ZnX7fLMcj2giSslkT8ZMMomqu-ECsbBnwOK5ltTwrOK"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">military_tech</span>
+</div>
+</div>
+<div>
+<p class="text-body-md font-body-md font-semibold text-on-surface">Siti Aminah</p>
+<p class="text-label-md font-label-md text-on-surface opacity-80">Senior Barista</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-headline-md font-headline-md text-secondary">0.85</p>
+<p class="text-label-sm font-label-sm text-on-surface opacity-80">Score</p>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-sm pr-md flex items-center justify-between shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/50">
+<div class="flex items-center gap-md">
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-tertiary-fixed">
+<img alt="Avatar Agus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwv4WJEzEZSgw9Iw3pDa38n0BMn5-uaAes7Z_NnwXZHPXClMk-tTr5aHyNTPrSjrWcAHoaG-ky7FNjidW13bGTeAXc29uZ-cQ5lg3fLzpI7-FHjI_NKA_MMTZ7IC4j-sLcNSuN10qUZz2qtzC-uq6rF6hibD31D6uY-Co5SUSNplziLl9tnBttdcPDpdqFLZd8UftAZnANrrvaePHemoYyXrArL83NYHZpac-avEMnNRDsEIPfug70hGh0i5Au6cg4_ii1_hUAvgU3"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-lowest rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-[#B45309] text-[16px]">military_tech</span>
+</div>
+</div>
+<div>
+<p class="text-body-md font-body-md font-semibold text-on-surface">Agus Pratama</p>
+<p class="text-label-md font-label-md text-on-surface opacity-80">Barista</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-headline-md font-headline-md text-secondary">0.82</p>
+<p class="text-label-sm font-label-sm text-on-surface opacity-80">Score</p>
+</div>
+</div>
+</div>
+<div class="mt-md flex justify-center">
+<button class="bg-primary text-on-primary text-label-lg font-label-lg px-6 py-2 hover:opacity-90 rounded-lg transition-all shadow-sm">
+                    View Full Leaderboard
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.04)] bg-surface-container-lowest dark:bg-inverse-surface docked full-width bottom-0 rounded-t-xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2">
+<!-- Dashboard (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+<span class="text-label-sm font-label-sm mt-1">Dashboard</span>
+</a>
+<!-- Criteria (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface opacity-70 dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">rule</span>
+<span class="text-label-sm font-label-sm mt-1">Criteria</span>
+</a>
+<!-- Evaluate (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface opacity-70 dark:text-secondary-fixed-dim px-4 py-1 hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-label-sm font-label-sm mt-1">Evaluate</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Kriteria Penilaian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "background": "#FDF8F2",
+                            "on-background": "#2C2C2C",
+                            "surface": "#FDF8F2",
+                            "on-surface": "#2C2C2C",
+                            "surface-container-lowest": "#F0F0F0",
+                            "primary": "#E89CA2",
+                            "on-primary": "#0B2240",
+                            "surface-tint": "#D78B91",
+                            "secondary": "#555555",
+                            "on-surface-variant": "#2C2C2C",
+                            "outline-variant": "#D0D0D0",
+                            "surface-bright": "#FFFFFF",
+                            "surface-variant": "#E0E0E0",
+                            "primary-container": "#E89CA2",
+                            "on-primary-container": "#0B2240",
+                            "error": "#ba1a1a",
+                            "error-container": "#ffdad6",
+                            "on-error-container": "#93000a",
+                            "surface-container-high": "#E0E0E0"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "sm": "8px",
+                            "gutter-mobile": "12px",
+                            "xs": "4px",
+                            "unit": "4px",
+                            "lg": "24px",
+                            "margin-mobile": "16px",
+                            "xl": "32px",
+                            "touch-target": "48px",
+                            "md": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": ["Inter"],
+                            "display": ["Inter"],
+                            "body-sm": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "label-lg": ["Inter"],
+                            "headline-md": ["Inter"],
+                            "label-sm": ["Inter"],
+                            "body-md": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "700"}],
+                            "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                            "label-lg": ["14px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "label-sm": ["10px", {"lineHeight": "12px", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 border-b border-[#0B2240] bg-[#0B2240] flex justify-between items-center w-full px-margin-mobile py-sm sticky z-40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-white/10 overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-[#FDF8F2]" data-icon="person">person</span>
+</div>
+<div>
+<h1 class="text-headline-md-mobile font-headline-md-mobile font-bold text-primary">Kenangan Performance</h1>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="p-margin-mobile max-w-md mx-auto grid grid-cols-4 gap-4 pb-12">
+<div class="col-span-4 mb-2">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface">Kelola Kriteria Penilaian</h2>
+<p class="text-body-sm font-body-sm text-secondary mt-1">Tambah dan atur kriteria evaluasi kinerja.</p>
+</div>
+<!-- Form Card -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant p-md relative overflow-hidden">
+<!-- Accent line -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-md">Tambah Kriteria Baru</h3>
+<form class="space-y-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface-variant">Nama Kriteria</label>
+<input class="h-touch-target px-3 py-2 bg-surface-bright border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors text-body-md font-body-md placeholder-secondary" placeholder="Misal: Kedisiplinan" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface-variant">Bobot (0-100%)</label>
+<div class="relative">
+<input class="h-touch-target w-full px-3 py-2 pr-8 bg-surface-bright border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors text-body-md font-body-md placeholder-secondary" placeholder="25" type="number"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-secondary">%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface-variant">Sifat Kriteria</label>
+<div class="flex items-center gap-3 p-2 border border-outline-variant rounded-DEFAULT bg-surface-bright">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary" name="criteria_type" type="radio" value="benefit"/>
+<span class="text-body-sm font-body-sm">Benefit (Semakin tinggi semakin baik)</span>
+</label>
+</div>
+<div class="flex items-center gap-3 p-2 border border-outline-variant rounded-DEFAULT bg-surface-bright mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="text-primary focus:ring-primary" name="criteria_type" type="radio" value="cost"/>
+<span class="text-body-sm font-body-sm">Cost (Semakin rendah semakin baik)</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-md font-label-md text-on-surface-variant">Keterangan Tambahan</label>
+<textarea class="px-3 py-2 bg-surface-bright border border-outline-variant rounded-DEFAULT focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors text-body-md font-body-md placeholder-secondary resize-none" placeholder="Deskripsi singkat kriteria..." rows="2"></textarea>
+</div>
+<button class="w-full h-touch-target bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-surface-tint transition-colors mt-2 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                     Tambah Kriteria
+                 </button>
+</form>
+</div>
+<div class="col-span-4 mt-xl mb-xs flex justify-between items-center border-b border-surface-variant pb-2">
+<h3 class="text-headline-md font-headline-md text-on-surface">Daftar Kriteria</h3>
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container-high px-2 py-1 rounded-full">Total Bobot: 100%</span>
+</div>
+<!-- Criteria List Item 1 -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant p-md flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface">Kehadiran</h4>
+<span class="bg-[#e6f4ea] text-[#137333] px-2 py-0.5 rounded text-[10px] font-semibold border border-[#ceead6]">Benefit</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">Tingkat presensi dan ketepatan waktu karyawan.</p>
+</div>
+<div class="text-right">
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-primary block">30%</span>
+<span class="text-label-sm font-label-sm text-secondary">Bobot</span>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-2 border-t border-surface-variant">
+<button class="h-8 px-3 rounded text-primary border border-primary hover:bg-primary-container/10 transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span> Edit
+                </button>
+<button class="h-8 px-3 rounded text-error hover:bg-error-container transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Criteria List Item 2 -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant p-md flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface">Kecepatan Pelayanan</h4>
+<span class="bg-[#e6f4ea] text-[#137333] px-2 py-0.5 rounded text-[10px] font-semibold border border-[#ceead6]">Benefit</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">Rata-rata waktu penyelesaian pesanan pelanggan.</p>
+</div>
+<div class="text-right">
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-primary block">40%</span>
+<span class="text-label-sm font-label-sm text-secondary">Bobot</span>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-2 border-t border-surface-variant">
+<button class="h-8 px-3 rounded text-primary border border-primary hover:bg-primary-container/10 transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span> Edit
+                </button>
+<button class="h-8 px-3 rounded text-error hover:bg-error-container transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Criteria List Item 3 -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-surface-variant p-md flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="text-body-lg font-body-lg font-semibold text-on-surface">Komplain Pelanggan</h4>
+<span class="bg-error-container text-on-error-container px-2 py-0.5 rounded text-[10px] font-semibold border border-[#fce8e6]">Cost</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">Jumlah keluhan yang diterima dari pelanggan.</p>
+</div>
+<div class="text-right">
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-primary block">30%</span>
+<span class="text-label-sm font-label-sm text-secondary">Bobot</span>
+</div>
+</div>
+<div class="flex justify-end gap-2 pt-2 border-t border-surface-variant">
+<button class="h-8 px-3 rounded text-primary border border-primary hover:bg-primary-container/10 transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="edit">edit</span> Edit
+                </button>
+<button class="h-8 px-3 rounded text-error hover:bg-error-container transition-colors text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] bg-[#0B2240] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-[#FDF8F2] px-4 py-1 hover:bg-white/10 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="rule" data-weight="fill" style="font-variation-settings: 'FILL' 1;">rule</span>
+<span class="text-label-sm font-label-sm mt-1">Criteria</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#FDF8F2] px-4 py-1 hover:bg-white/10 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="text-label-sm font-label-sm mt-1">Evaluate</span>
+</a>
+</nav>
+</body></html>

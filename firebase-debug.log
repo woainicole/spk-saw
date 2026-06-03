@@ -1,0 +1,80 @@
+[debug] [2026-05-17T14:53:56.149Z] ----------------------------------------------------------------------
+[debug] [2026-05-17T14:53:56.152Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Doelhoir\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only firestore:rules --project spk-saw-c377c
+[debug] [2026-05-17T14:53:56.153Z] CLI Version:   15.18.0
+[debug] [2026-05-17T14:53:56.153Z] Platform:      win32
+[debug] [2026-05-17T14:53:56.153Z] Node Version:  v20.14.0
+[debug] [2026-05-17T14:53:56.153Z] Time:          Sun May 17 2026 21:53:56 GMT+0700 (Indochina Time)
+[debug] [2026-05-17T14:53:56.154Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-17T14:54:00.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-17T14:54:00.693Z] > authorizing via signed-in user (ryujinomoto25@gmail.com)
+[debug] [2026-05-17T14:54:00.693Z] [iam] checking project spk-saw-c377c for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-05-17T14:54:00.696Z] Checked if tokens are valid: false, expires at: 1779026403717
+[debug] [2026-05-17T14:54:00.696Z] Checked if tokens are valid: false, expires at: 1779026403717
+[debug] [2026-05-17T14:54:00.696Z] > refreshing access token with scopes: []
+[debug] [2026-05-17T14:54:00.701Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-05-17T14:54:00.701Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-17T14:54:00.900Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-05-17T14:54:00.901Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-05-17T14:54:00.915Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/spk-saw-c377c:testIamPermissions [none]
+[debug] [2026-05-17T14:54:00.916Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/spk-saw-c377c:testIamPermissions  x-goog-user-project=spk-saw-c377c
+[debug] [2026-05-17T14:54:00.916Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spk-saw-c377c:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-05-17T14:54:12.793Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/spk-saw-c377c:testIamPermissions 200
+[debug] [2026-05-17T14:54:12.793Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/spk-saw-c377c:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'spk-saw-c377c'...
+[info] 
+[info] i  deploying firestore 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-05-17T14:54:12.801Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:12.801Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:12.802Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/spk-saw-c377c/databases/(default) [none]
+[debug] [2026-05-17T14:54:13.122Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/spk-saw-c377c/databases/(default) 200
+[debug] [2026-05-17T14:54:13.123Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/spk-saw-c377c/databases/(default) {"name":"projects/spk-saw-c377c/databases/(default)","uid":"a5a9e44f-48a7-438e-9be6-ec9ab051bd99","createTime":"2026-05-17T13:38:02.884861Z","updateTime":"2026-05-17T13:38:02.884861Z","locationId":"asia-southeast2","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-05-17T13:54:12.735159Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"zet","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"INaF/PPJwJQDMO6Irqi5wJQD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-05-17T14:54:13.126Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:13.126Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:13.126Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c:test [none]
+[debug] [2026-05-17T14:54:13.126Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c:test [omitted]
+[debug] [2026-05-17T14:54:14.654Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c:test 200
+[debug] [2026-05-17T14:54:14.654Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-05-17T14:54:14.657Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:14.657Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:14.658Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases pageSize=10&pageToken=
+[debug] [2026-05-17T14:54:15.968Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases 200
+[debug] [2026-05-17T14:54:15.968Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases {"releases":[{"name":"projects/spk-saw-c377c/releases/cloud.firestore","rulesetName":"projects/spk-saw-c377c/rulesets/1688fb51-1f65-4d84-b253-c84ac05ae070","createTime":"2026-05-17T13:40:44.054808Z","updateTime":"2026-05-17T13:40:44.054808Z"}]}
+[debug] [2026-05-17T14:54:15.969Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:15.970Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:15.970Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets/1688fb51-1f65-4d84-b253-c84ac05ae070 [none]
+[debug] [2026-05-17T14:54:16.252Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets/1688fb51-1f65-4d84-b253-c84ac05ae070 200
+[debug] [2026-05-17T14:54:16.253Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets/1688fb51-1f65-4d84-b253-c84ac05ae070 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-05-17T14:54:16.254Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:16.254Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:16.255Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets [none]
+[debug] [2026-05-17T14:54:16.255Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets [omitted]
+[debug] [2026-05-17T14:54:17.952Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets 200
+[debug] [2026-05-17T14:54:17.952Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/rulesets {"name":"projects/spk-saw-c377c/rulesets/29ae12ec-192c-4277-82c8-fd61cda2d16d","source":{"files":[{"content":"rules_version = '2';\n\nservice cloud.firestore {\n  match /databases/{database}/documents {\n\n    // Criteria: only the owner can read, create, update, or delete\n    match /criteria/{docId} {\n      allow read, update, delete: if request.auth != null\n                                  && request.auth.uid == resource.data.uid;\n      allow create: if request.auth != null\n                    && request.resource.data.uid == request.auth.uid;\n    }\n\n    // Alternatives: only the owner can read, create, update, or delete\n    match /alternatives/{docId} {\n      allow read, update, delete: if request.auth != null\n                                  && request.auth.uid == resource.data.uid;\n      allow create: if request.auth != null\n                    && request.resource.data.uid == request.auth.uid;\n    }\n\n  }\n}\n","name":"firestore.rules"}]},"createTime":"2026-05-17T14:54:17.513343Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-05-17T14:54:17.952Z] [rules] created ruleset projects/spk-saw-c377c/rulesets/29ae12ec-192c-4277-82c8-fd61cda2d16d
+[debug] [2026-05-17T14:54:17.953Z] [rules] releasing cloud.firestore with ruleset projects/spk-saw-c377c/rulesets/29ae12ec-192c-4277-82c8-fd61cda2d16d
+[debug] [2026-05-17T14:54:17.953Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:17.953Z] Checked if tokens are valid: true, expires at: 1779033239901
+[debug] [2026-05-17T14:54:17.954Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases/cloud.firestore [none]
+[debug] [2026-05-17T14:54:17.954Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases/cloud.firestore {"release":{"name":"projects/spk-saw-c377c/releases/cloud.firestore","rulesetName":"projects/spk-saw-c377c/rulesets/29ae12ec-192c-4277-82c8-fd61cda2d16d"}}
+[debug] [2026-05-17T14:54:19.406Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases/cloud.firestore 200
+[debug] [2026-05-17T14:54:19.407Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/spk-saw-c377c/releases/cloud.firestore {"name":"projects/spk-saw-c377c/releases/cloud.firestore","rulesetName":"projects/spk-saw-c377c/rulesets/29ae12ec-192c-4277-82c8-fd61cda2d16d","createTime":"2026-05-17T13:40:44.054808Z","updateTime":"2026-05-17T14:54:18.942578Z"}
+[debug] [2026-05-17T14:54:19.407Z] [rules] updated release projects/spk-saw-c377c/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/spk-saw-c377c/overview
+[debug] [2026-05-17T14:54:29.431Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\Doelhoir\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:309:49)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+[error] 
+[error] Error: An unexpected error has occurred.
